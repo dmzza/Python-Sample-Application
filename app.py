@@ -180,10 +180,10 @@ def price():
 @app.route('/history', methods=['GET'])
 def history():
     """Return the last 5 trips made by the logged in user."""
-    url = config.get('base_uber_url_v1_1') + 'history'
+    url = config.get('base_uber_url') + 'history'
     params = {
         'offset': 0,
-        'limit': 5,
+        'limit': 15,
     }
 
     response = app.requests_session.get(
